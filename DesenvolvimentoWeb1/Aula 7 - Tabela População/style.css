@@ -1,0 +1,56 @@
+body{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+.wrapper-tabela{
+    margin: auto;
+    width: 50%;
+    display: block;
+    border: 5px solid #1E1F22;
+    border-radius: 21px;
+    text-align: center;
+    background-color: #313338;
+    color: white;
+    overflow-x: scroll;
+}
+
+table{
+    margin: auto;
+    margin-bottom: 2em;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 1em;
+    color: black;
+    background-color: white;
+}
+
+th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 1em;
+}
+
+img{
+    width: 40px;
+    height: 30px;
+    display: block;
+}
+
+/*Scrollbar Style*/
+::-webkit-scrollbar {
+    width: 5px;               
+  }
+  
+::-webkit-scrollbar-track {
+    background: #2B2D31;
+    border-radius: 20px;           
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #1A1B1E;  
+    border-radius: 20px;       
+    border: 1px solid #1A1B1E;  
+  }
+
