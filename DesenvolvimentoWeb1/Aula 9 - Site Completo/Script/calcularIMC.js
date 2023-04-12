@@ -1,11 +1,14 @@
 function calculoIMC(){
     var formularioDadosIMC = document.getElementById("formularioDadosIMC");
 
+    //Coletando informações do formulário em variaveis
     var peso = +formularioDadosIMC.peso.value;
     var altura = +formularioDadosIMC.altura.value;
 
+    //Calculo IMC
     var imc = peso / (altura * altura)
 
+    //Formatação para duas casas decimais
     formularioDadosIMC.imc.value = imc.toFixed(2);
 
     if(imc < 18.5)
