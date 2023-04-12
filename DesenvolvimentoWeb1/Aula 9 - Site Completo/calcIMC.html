@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Center</title>
+    <link rel="stylesheet" href="Style/homeStyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/120/samsung/349/person-lifting-weights_1f3cb-fe0f.png">
+
+    <script src="Script/calcularIMC.js"></script>
+
+</head>
+
+<body>
+    <header class="wrapperPageHeader">
+        <div class="pageHeader">
+            <h1>Fitness Center</h1>
+        </div>
+    </header>
+    <aside class="wrapperPageSidebar">
+        <div class="pageSidebar">
+            <a href="home.html">
+                <h1>Página Inicial</h1>
+            </a>
+            <a href="planoAlimentar.html">
+                <h1>Planos alimentares</h1>
+            </a>
+            <a href="treinos.html">
+                <h1>Treinos</h1>
+            </a>
+            <a href="calcIMC.html">
+                <h1>Cálculo IMC</h1>
+            </a>
+            <a href="https://www.google.com/search?q=academias&biw=1600&bih=749&tbm=lcl&ei=4qA2ZPerA6zU1sQPt-q2uAo&ved=0ahUKEwj3pIWDqaT-AhUsqpUCHTe1DacQ4dUDCAk&uact=5&oq=academias&gs_lcp=Cg1nd3Mtd2l6LWxvY2FsEAMyBQgAEIAEMg0IABCKBRCxAxCDARBDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgARQAFgAYK0CaABwAHgAgAFziAFzkgEDMC4xmAEAoAEBwAEB&sclient=gws-wiz-local#rlfi=hd:;si:;mv:[[-22.6923078,-47.6183408],[-22.734257,-47.665651999999994]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14"
+                target="_blank">
+                <h1>Academias</h1>
+            </a>
+        </div>
+    </aside>
+    <section class="wrapperContent">
+        <div class="pageContent">
+            <h1>Calculadora de IMC</h1>
+            <hr><br>
+            <form id="formularioDadosIMC">
+                <label for="peso">Peso(Kg):</label><br>
+                <input name="peso" type="number" /><br><br>
+                <label for="altura">Altura(Metros):</label><br>
+                <input name="altura" type="number" /><br><br>
+                <label for="imc">IMC:</label>
+                <input name="imc" type="number" disabled="disabled" />
+                <br><br>
+                <a href="#" onclick="calculoIMC();">Calcular</a>
+            </form>
+        </div>
+    </section>
+    <aside class="wrapperPropaganda">
+        <div class="PropagandaContent">
+            <p>MUDE SUA VIDA HOJE!</p>
+        </div>
+    </aside>
+    <footer class="wrapperPageFooter">
+        <div class="pageFooter"></div>
+    </footer>
+</body>
+
+</html>
