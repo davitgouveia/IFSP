@@ -1,0 +1,39 @@
+/*Sticky NavBar*/
+.stickynav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*Header Logo*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+div.header-logo h1{
+    border: 2px solid rgb(255, 0, 0, 0.2);
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #03071E;
+    font-size: clamp(10px,50px,70px);
+    color: #E85D04;
+    width: 100%;
+    padding: 8px;
+}
+
+header img {
+    width: clamp(10px, 20px, 50px);
+}
+
+.col{
+    border: 1px solid white;
+}
