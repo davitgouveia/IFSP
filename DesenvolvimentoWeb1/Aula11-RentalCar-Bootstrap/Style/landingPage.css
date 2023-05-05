@@ -1,3 +1,8 @@
+/*Body*/
+body{
+    background-color: #03071E;
+}
+
 /*Sticky NavBar*/
 .stickynav {
     position: fixed;
@@ -36,4 +41,16 @@ header img {
 
 .col{
     border: 1px solid white;
+}
+
+/*Cards*/
+.card{
+    width: 65%;
+    background-color: grey;
+    color: black;
+}
+
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
 }
