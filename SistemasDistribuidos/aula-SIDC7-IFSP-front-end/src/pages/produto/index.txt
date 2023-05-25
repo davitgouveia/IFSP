@@ -16,6 +16,8 @@ const Produto = () => {
   const [carregar, setCarregar] = useState(false);
   const [listaDados, setListaDados] = useState([]);
   const [categoriaSelect, setCategoriaSelect] = useState([]);
+
+  const [produtoSelect, setProdutoSelect] = useState([]);
   //Filtros
   const [buscaProduto, setBuscaProduto] = useState();
   const [buscaStatus, setBuscaStatus] = useState();
@@ -23,7 +25,7 @@ const Produto = () => {
 
   useEffect(() => {
     listar();
-    listaCategoria();
+    listaProduto();
   }, []);
 
   /*Filtros*/
@@ -65,6 +67,18 @@ const Produto = () => {
     })
   }
 
+  function listaProduto() {
+    Api.get("produto/listaproduto").then((rps) => {
+      var cat = rps.data.obj;
+      var nCat = [];
+      nCat[nCat.length] = { value: "", label: "Selecione..." };
+      cat.forEach((e) => {
+        nCat[nCat.length] = { value: e.id, label: e.nome }
+      });
+      setProdutoSelect(nCat);
+    })
+  }
+
   const data = listaDados;
   const columns = [
     {
@@ -73,6 +87,12 @@ const Produto = () => {
       sortable: true,
       width: '10%',
       center: true,
+    },
+    {
+      name: <th>Descrição</th>,
+      selector: 'nome',
+      sortable: true,
+      width: '25%',
     },
     {
       name: <th>Descrição</th>,
@@ -337,6 +357,19 @@ const Produto = () => {
               placeholder="Selecione..."
               defaultValue={categoriaSelect.find(
                 (x) => x.value === produto?.id_categoria
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="row m1-5 mr-5">
+          <div className="form-group col-md-12">
+            <label>Produto</label>
+            <Select
+              options={produtoSelect}
+              placeholder="Selecione..."
+              defaultValue={produtoSelect.find(
+                (x) => x.value === produto?.nome
               )}
             />
           </div>

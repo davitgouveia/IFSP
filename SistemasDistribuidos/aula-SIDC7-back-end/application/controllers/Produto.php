@@ -103,4 +103,31 @@ class Produto extends CI_Controller {
 
 		echo json_encode($rps);
 	}
+
+	//Filtros
+	public function filtrar() {
+        $pesq = [];
+
+        if ($this->input->post("nome") != '')
+            $pesq['produto.nome'] = $this->input->post("nome");
+
+        if ($this->input->post("status") != '')
+            $pesq['produto.status'] = $this->input->post("status");
+
+        $data = $this->produtomodel->filtrar($pesq);
+
+        if (count($data) > 0) {
+            $rps = array(
+                'produto.status' => true,
+                'obj' => $data
+            );
+        } else {
+            $rps = array(
+                'produto.status' => false,
+                'erro' => 'Não foi encontrado nenhum registro que satisfaça ao filtro.'
+            );
+        }
+
+        echo json_encode($rps);
+    }
 }

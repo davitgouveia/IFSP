@@ -24,4 +24,35 @@ class Usuariomodel extends CI_Model {
         $this->db->where('id', $id);
     }
 
+    public function excluir($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('usuario');
+    }
+
+    public function listar() {
+        $this->db->from('usuario');
+        $this->db->order_by('nome', 'asc');
+
+        $query = $this->db->get();
+        $res = $query->result();
+        return $res;
+    }
+
+    public function filtrar($array) {
+
+        $this->db->from('usuario');
+
+        foreach($array as $item => $value) {
+            if ($item == 'nome')
+                $this->db->like($item, $value, 'both');
+            else
+                $this->db->where($item, $value);
+        }
+
+        $this->db->order_by('nome');
+        $query = $this->db->get();
+        $res = $query->result();
+        return $res;
+    }
+
 }
