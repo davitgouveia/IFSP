@@ -46,4 +46,49 @@ class Usuario extends CI_Controller {
 			}
 		}
 	}
+
+	public function listar() {
+
+		$cat = $this->usuariomodel->listar();
+
+		$data = array();
+
+			foreach ($cat as $linha) {
+				$linha->id = intval($linha->id);
+				$linha->data_cad = date("d/m/Y H:i:s", strtotime($linha->data_cad));
+				if ($linha->data_alt != null)
+				$linha->data_alt = date("d/m/Y H:i:s", strtotime($linha->data_alt));
+
+				$data[] = $linha;
+			}
+
+		$rps = array(
+			'status' => true,
+			'obj' => $data
+		);
+
+		echo json_encode($rps);
+	}
+
+
+	public function excluir() {
+		$id = $this->input->post('id');
+
+		$this->usuariomodel->excluir($id);
+
+		echo json_encode([
+			'status' => true,
+			'mensagem' => "Exclusão realizada com sucesso."
+		]); 
+	}
+
+	public function listausuario() {
+		$data = $this->usuariomodel->listausuario();
+		$rps = array(
+			'status' => true,
+			'obj' => $data
+		);
+
+		echo json_encode($rps);
+	}
 }

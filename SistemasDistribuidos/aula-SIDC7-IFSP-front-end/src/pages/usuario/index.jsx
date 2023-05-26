@@ -14,24 +14,21 @@ const Usuario = () => {
   const [usuario, setUsuario] = useState();
   const [carregar, setCarregar] = useState(false);
   const [listaDados, setListaDados] = useState([]);
-  const [usuarioSelect, setUsuarioSelect] = useState([]);
-  //Filtros
+  /*Filtros*/
   const [buscaUsuario, setBuscaUsuario] = useState();
-  const [buscaStatus, setBuscaStatus] = useState();
+
 
   useEffect(() => {
     listar();
   }, []);
 
-  /*Filtros*/
   function filtrar() {
     setCarregar(true);
     var data = {
-      nome: buscaUsuario,
-      status: buscaStatus
+      nome: buscaUsuario
     };
 
-    Api.post('usuario/filtrar', data).then((rps) => {
+    Api.post('categoria/filtrar', data).then((rps) => {
       if (rps.data.status == false) {
         Swal.fire({
           title: "Atenção",
@@ -49,20 +46,8 @@ const Usuario = () => {
     })
   }
 
-  //Listar
-  function listaUsuario() {
-    Api.get("usuario/listausuario").then((rps) => {
-      var cat = rps.data.obj;
-      var nCat = [];
-      nCat[nCat.length] = { value: "", label: "Selecione..." };
-      cat.forEach((e) => {
-        nCat[nCat.length] = { value: e.id, label: e.nome }
-      });
-      setUsuarioSelect(nCat);
-    })
-  }
-
   const data = listaDados;
+  console.log(listaDados);
   const columns = [
     {
       name: <th>Código</th>,
@@ -90,17 +75,6 @@ const Usuario = () => {
       sortable: true,
       width: '17%',
       center: true,
-    },
-    {
-      name: <th>Status</th>,
-      selector: 'status',
-      sortable: true,
-      width: '12%',
-      center: true,
-      cell: row => {
-        if (row.status == "S") { return <span class="label label-success label-inline">Ativo</span> }
-        else { return <span class="label label-secondary label-inline">Desativado</span> }
-      }
     },
     {
       name: <th>Ações</th>,
@@ -143,7 +117,7 @@ const Usuario = () => {
       cancelButtonText: 'Não, Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        Api.post('categoria/excluir', cad).then(rps => {
+        Api.post('usuario/excluir', cad).then(rps => {
           if (rps.data.status == true) {
             addToast(rps.data.mensagem, {
               appearance: 'success',
@@ -199,7 +173,7 @@ const Usuario = () => {
           {/*begin::Details*/}
           <div className="d-flex align-items-center flex-wrap mr-2">
             {/*begin::Title*/}
-            <h5 className="text-dark font-weight-bold mt-6 mb-2 mr-5">Usuário</h5>
+            <h5 className="text-dark font-weight-bold mt-6 mb-2 mr-5">Categoria</h5>
             {/*end::Title*/}
             {/*begin::Separator*/}
             <div className="subheader-separator subheader-separator-ver mt-6 mb-2 mr-5 bg-gray-200" />
@@ -226,21 +200,12 @@ const Usuario = () => {
           <div className="card card-custom">
             <div className="row">
               <div className="col-md-8 form-group">
-                <label>Nome</label>
+                <label>Descrição</label>
                 <input type="text" value={buscaUsuario}
                   onChange={e => { setBuscaUsuario(e.target.value) }}
                   className="form-control" />
               </div>
-              <div className="col-md-2 form-group">
-                <label>Status</label>
-                <select className="form-control" value={buscaStatus}
-                  onChange={e => { setBuscaStatus(e.target.value) }}>
-                  <option value="" selected>Selecione</option>
-                  <option value="S">Ativo</option>
-                  <option value="N">Desativado</option>
-                </select>
-              </div>
-              <div className="col-md-2 form-group">
+              <div className="col-md-4 form-group">
                 <label>&nbsp;</label>
                 <button className="btn btn-primary btn-block"
                   onClick={e => { filtrar() }}>Filtrar</button>
@@ -256,7 +221,7 @@ const Usuario = () => {
           >
             <div className="row">
               <DataTable
-                title="Lista de Produtos"
+                title="Lista de Categoria"
                 columns={columns}
                 data={data}
                 striped="true"
@@ -300,12 +265,16 @@ const Usuario = () => {
 
       <Modal size={"xl"} show={modal} onHide={() => fecharModal()}>
         <Modal.Header>
-          <Modal.Title>{acao} Usuário</Modal.Title>
+          <Modal.Title>Categoria</Modal.Title>
         </Modal.Header>
 
+        {/*Função de adicionar item
+          - Utiliza a classe form control
+        
+        */}
         <div className="row ml-5 mr-5 mt-5">
           <div className="form-group col-md-10">
-            <label>Nome</label>
+            <label>Descrição</label>
             <input type="text" className="form-control"
               onChange={e => { setUsuario({ ...usuario, nome: e.target.value }) }}
               value={usuario?.nome} />
@@ -320,31 +289,6 @@ const Usuario = () => {
               <option value="S">Ativo</option>
               <option value="N">Desativado</option>
             </select>
-          </div>
-        </div>
-
-        <div className="row ml-5 mr-5">
-          <div className="form-group col-md-12">
-            <label>E-mail</label>
-            <input type="text" className="form-control"
-              onChange={e => { setUsuario({ ...usuario, email: e.target.value }) }}
-              value={usuario?.email} />
-          </div>
-        </div>
-
-        <div className="row ml-5 mr-5">
-          <div className="form-group col-md-4">
-            <label>Senha</label>
-            <input type="password" className="form-control"
-              onChange={e => { setUsuario({ ...usuario, senha: e.target.value }) }}
-            />
-          </div>
-
-          <div className="form-group col-md-4">
-            <label>Confirmação de Senha</label>
-            <input type="password" className="form-control"
-              onChange={e => { setUsuario({ ...usuario, confsenha: e.target.value }) }}
-            />
           </div>
         </div>
 

@@ -21,12 +21,12 @@ class Produtomodel extends CI_Model {
     }
 
     public function listar() {
-        // //Inner Join provisorio
-        // $this->db->select('produto.*,categoria.nome');
-        // $this->db->from('produto');
-        // $this->db->join('categoria', 'produto.id_categoria = categoria.id');
+        //Inner Join provisorio
+        $this->db->select('produto.*, categoria.nome as categoria_nome');
+        $this->db->from('produto');
+        $this->db->join('categoria', 'produto.id_categoria = categoria.id');
 
-        $this->db->from('produto'); //retirar se usar innerjoin
+        // $this->db->from('produto'); //retirar se usar innerjoin
         $this->db->order_by('produto.nome', 'asc');
 
         $query = $this->db->get();
@@ -38,7 +38,7 @@ class Produtomodel extends CI_Model {
     public function filtrar($array) {
 
         //Inner Join
-        $this->db->select('produto.*,categoria.nome');
+        $this->db->select('produto.*, categoria.nome as categoria_nome');
         $this->db->from('produto');
         $this->db->join('categoria', 'produto.id_categoria = categoria.id');
 

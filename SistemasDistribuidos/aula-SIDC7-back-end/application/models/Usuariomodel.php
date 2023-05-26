@@ -30,8 +30,19 @@ class Usuariomodel extends CI_Model {
     }
 
     public function listar() {
+        $this->db->select('*');
         $this->db->from('usuario');
         $this->db->order_by('nome', 'asc');
+
+        $query = $this->db->get();
+        $res = $query->result();
+        return $res;
+    }
+
+    public function listausuario() {
+        $this->db->select('id, nome');
+        $this->db->from('usuario');
+        $this->db->order_by('nome','asc');
 
         $query = $this->db->get();
         $res = $query->result();

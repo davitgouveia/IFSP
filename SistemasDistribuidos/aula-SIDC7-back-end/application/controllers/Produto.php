@@ -105,6 +105,8 @@ class Produto extends CI_Controller {
 	}
 
 	//Filtros
+
+	//Adicione todos os if necessarios para a busca
 	public function filtrar() {
         $pesq = [];
 
@@ -113,6 +115,9 @@ class Produto extends CI_Controller {
 
         if ($this->input->post("status") != '')
             $pesq['produto.status'] = $this->input->post("status");
+
+		if ($this->input->post("id_categoria") != '')
+            $pesq['produto.id_categoria'] = $this->input->post("id_categoria");
 
         $data = $this->produtomodel->filtrar($pesq);
 
