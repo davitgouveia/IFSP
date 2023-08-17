@@ -1,0 +1,37 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>B1</title>
+</head>
+
+<body>
+    <center>
+        <h2> Calculo perimetro,area, volume: </h2>
+        <p>Comprimento : <input id="x"></p>
+        <p>Largura : <input id="y"></p>
+        <p>Altura : <input id="z"></p>
+        <button onclick="s1()" type="button" class="btn btn-default" aria-label="Alinhar na esquerda"> Calcular
+        </button>
+        <p>Perimetro: <input id="perimetro"></p>
+        <p>Area : <input id="area"></p>
+        <p>Volume : <input id="volume"></p>
+    </center>
+    <script>
+        function s1() {
+            p1 = parseFloat(document.getElementById("x").value);
+            p2 = parseFloat(document.getElementById("y").value);
+            p3 = parseFloat(document.getElementById("z").value);
+            r1 = (p1 + p2 + p1 + p2);
+            r2 = p1 * p2;
+            r3 = p1 * p2 * p3;
+            document.getElementById("perimetro").value = r1;
+            document.getElementById("area").value = r2;
+            document.getElementById("volume").value = r3;
+        }
+    </script>
+</body>
+
+</html>

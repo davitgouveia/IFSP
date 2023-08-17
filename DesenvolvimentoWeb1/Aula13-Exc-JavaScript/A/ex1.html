@@ -1,0 +1,54 @@
+<!-- testar o programa exemplo 1   em java
+
+pedir x, y e z   (numeros)
+
+e calcular s1, s2 e s3
+
+formulas:
+
+s1 = 3x + 5y -20
+
+s2 = 8x + 3y - 50
+
+s3 = x+ y +z / 100
+
+Explicar o codigo
+ -->
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>B1</title>
+</head>
+
+<body>
+    <center>
+        <h2> Formulas: </h2>
+        <p>X: <input id="x"></p>
+        <p>Y: <input id="y"></p>
+        <p>Z: <input id="z"></p>
+        <button onclick="s1()" type="button" class="btn btn-default" aria-label="Alinhar na esquerda"> Calcular
+        </button>
+        <p>s1: <input id="s1"></p>
+        <p>s2: <input id="s2"></p>
+        <p>s3: <input id="s3"></p>
+    </center>
+    <script>
+        function s1() {
+            var s1;
+            s1 = (3 * (parseFloat(document.getElementById("x").value))) + (5 * (parseFloat(document.getElementById("y").value))) - 20;
+            document.getElementById("s1").value = Math.round(s1);
+            var s2;
+            s2 = (8 * (parseFloat(document.getElementById("x").value))) + (3 * (parseFloat(document.getElementById("y").value))) - 50;
+            document.getElementById("s2").value = Math.round(s2);
+            var s3;
+            s3 = ((parseFloat(document.getElementById("x").value)) + (parseFloat(document.getElementById("y").value)) + (parseFloat(document.getElementById("z").value))) / 100;
+            document.getElementById("s3").value = Math.round(s3);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    //Funções de ativar e desativar
+function disable() {
+document.getElementById("mySelect").disabled=true;
+}
+function enable() {
+document.getElementById("mySelect").disabled=false;
+}
+</script>
+</head>
+<body>
+
+<form>
+    <!--Cria combobox-->
+<select id="mySelect">
+<option>Maça</option>
+<option>Pera</option>
+<option>Banana</option>
+<option>Laranja</option>
+</select>
+<br><br>
+<!--Botão de ativar e desativar-->
+<input type="button" onclick="disable()" value="Disable list">
+<input type="button" onclick="enable()" value="Enable list">
+</form>
+
+</body>
+</html>

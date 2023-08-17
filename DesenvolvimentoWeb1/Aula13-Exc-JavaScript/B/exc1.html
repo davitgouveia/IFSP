@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+    <title> Exercício dia 14 </title>
+</head>
+<body>
+
+    <h1>
+        <font color="#FF0000"> Formulário:
+    </h1>
+
+    <!--Define a ação do Formulario para redirecionar para página-->
+    <form action="/action_page.php">
+
+        <!--Todos os campos do formulário recebem a função myFunction quando selecionadas, e recebem a função
+            Function quando não selecionadas-->
+        <font color="#151515">
+
+            <p> Nome: <input type="text" id="nome" onfocus="myFunction(this.id) " onblur="Function(this.id)"> </p>
+
+            <br>
+
+            <p> Endereço: <input type="text" id="endereco" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+            </p>
+
+            <br>
+
+            <p> Cidade: <input type="text" id="cidade" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+            </p>
+
+            <br>
+
+            <p> Estado: <input type="text" id="estado" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+            </p>
+
+            <br>
+
+            <p> Gênero: <input type="text" id="genero" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+            </p>
+
+            <br>
+
+            <p> Idade: <input type="text" id="idade" onfocus="myFunction(this.id)" onblur="Function(this.id)"> </p>
+
+    </form>
+
+    <script>
+
+        //Função myFunction altera o estilo de fundo do elemento para "Vermelho"
+        function myFunction(x) {
+
+            document.getElementById(x).style.background = "red";
+
+        }
+
+
+        //Função Function altera o estilo de fundo do elemento para "Branco" e transforma seu conteúdo em caixa alta
+        function Function(y) {
+
+            document.getElementById(y).style.background = "white";
+
+            var x = document.getElementById("nome");
+
+            x.value = x.value.toUpperCase();
+
+            var x = document.getElementById("endereco");
+
+            x.value = x.value.toUpperCase();
+
+            var x = document.getElementById("cidade");
+
+            x.value = x.value.toUpperCase();
+
+            var x = document.getElementById("estado");
+
+            x.value = x.value.toUpperCase();
+
+            var x = document.getElementById("genero");
+
+            x.value = x.value.toUpperCase();
+
+            var x = document.getElementById("idade");
+
+            x.value = x.value.toUpperCase();
+
+        }
+    </script>
+</body>
+</html>

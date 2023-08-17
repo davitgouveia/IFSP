@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    //Função de alerta
+function message() {
+alert("This alert box was triggered by the onreset event handler");
+}
+</script>
+</head>
+<body>
+
+    <!--Define que ao resetar, a função message é acionada-->
+<form onreset="message()">
+Digite seu nome: <input type="text" size="20">
+<!--Botão de resetar-->
+<input type="reset">
+</form>
+
+</body>
+</html>

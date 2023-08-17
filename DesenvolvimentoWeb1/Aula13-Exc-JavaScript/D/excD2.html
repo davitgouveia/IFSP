@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculadora</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <center>
+        <h2>Davi Trost Gouveia - PC3010741</h2>
+        <div style="border-radius: 25px; border: 2px solid black; width: fit-content; padding: 1em;">
+            <h2>Calculo de Perimetro, Área e Diametro: </h2>
+            <p>Raio do Circulo : <input id="x"></p>
+            <button onclick="calcula()" type="button" class="btn btn-default" aria-label="Alinhar na esquerda"> Calcular
+            </button>
+            <p>Perimetro: <input id="perimeter"></p>
+            <p>Area : <input id="area"></p>
+            <p>Diametro : <input id="diameter"></p>
+        </div>
+    </center>
+    <script>
+        function calcula() {
+            r = parseFloat(document.getElementById("x").value);
+
+            let pi = Math.PI
+            p = (r * (2 * pi))
+            area = (pi * Math.pow(r, 2))
+            diameter = r + r
+
+            document.getElementById("perimeter").value = Math.round(p);
+            document.getElementById("area").value = Math.round(area);
+            document.getElementById("diameter").value = Math.round(diameter);
+
+        }
+    </script>
+</body>
+
+</html>>

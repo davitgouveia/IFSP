@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    //Altera o conteúdo "demo" com as coordenadas x e y do ponteiro do usuario
+function mostraCoord(event) {
+document.getElementById("demo").innerHTML =
+"X= " + event.clientX + "<br>Y= " + event.clientY;
+}
+</script>
+</head>
+
+<body>
+    <!--Dispara a função "mostraCoord" ao clicar com o mouse e usa o evento como parâmetro-->
+<p onmousedown="mostraCoord(event)">
+Clique nesse parágrafo para imprimir as coordenadas do ponteiro do mouse</p>
+
+<p id="demo"></p>
+
+</body>
+</html>

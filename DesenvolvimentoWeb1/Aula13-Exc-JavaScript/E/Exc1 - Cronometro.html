@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <style>
+        .container {
+            text-align: center;
+            height: 160px;
+            width: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            background-color: gray;
+        }
+
+        .timer {
+            font-size: 24px;
+            margin-bottom: 20px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            background-color: aquamarine;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #e6e6e6;
+            border: none;
+            outline: none;
+            margin-right: 10px;
+        }
+        body, html{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Davi Trost Gouveia - PC3010741</h2>
+    <div class="container">
+        <center>
+            <div class="timer" id="timer">00:00:00</div>
+            <button class="button" onclick="startTimer()">Iniciar</button>
+            <button class="button" onclick="stopTimer()">Parar</button>
+            <button class="button" onclick="resetTimer()">Zerar</button>
+        </center>
+    </div>
+
+    <script>
+        let startTime;
+        let elapsedTime = 0;
+        let timerInterval;
+
+        function startTimer() {
+            startTime = Date.now() - elapsedTime;
+            clearInterval(timerInterval);
+            timerInterval = setInterval(updateTimer, 10);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            elapsedTime = 0;
+            document.getElementById('timer').textContent = '00:00:00';
+        }
+
+        function updateTimer() {
+            const currentTime = Date.now();
+            elapsedTime = currentTime - startTime;
+            const formattedTime = formatTime(elapsedTime);
+            document.getElementById('timer').textContent = formattedTime;
+        }
+
+        function formatTime(milliseconds) {
+            const totalSeconds = Math.floor(milliseconds / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            const formattedHours = padZero(hours);
+            const formattedMinutes = padZero(minutes);
+            const formattedSeconds = padZero(seconds);
+
+            return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        }
+
+        function padZero(number) {
+            return number.toString().padStart(2, '0');
+        }
+    </script>
+</body>
+
+</html>

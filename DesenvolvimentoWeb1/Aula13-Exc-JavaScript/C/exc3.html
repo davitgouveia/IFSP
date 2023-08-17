@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    //Transforma o conteúdo do elemento "fname" para caixa alta
+function myFunction() {
+var x = document.getElementById("fname");
+x.value = x.value.toUpperCase();
+}
+</script>
+</head>
+<body>
+
+Digite seu nome: <input type="text" id="fname" onblur="myFunction()">
+
+<p>Quando sai do campo de dados, a funçao é disparada para transformar o texto em caixa alta</p>
+
+</body>
+</html>

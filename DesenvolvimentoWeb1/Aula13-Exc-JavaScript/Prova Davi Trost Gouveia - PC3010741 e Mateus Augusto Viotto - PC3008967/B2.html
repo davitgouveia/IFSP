@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cálculo de Salário Líquido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <p> Davi Trost Gouveia - PC3010741</p>
+    <p> Mateus Augusto Viotto - PC3008967 </p>
+    <h4>Enunciado:</h4>
+    <p>B2. Fazer um programa para pedir o nome salario bruto, calcular inss com sendo 11%, bônus 10% de salario, plano
+        de saúde de 15%, salario liquido = salario + bônus – inss – plano de saúde, mostrar o valor do inss, bônus,
+        plano de saúde e salario liquido. Para usar porcentagem basta multiplicar porcentagem dividido por 100, ou inss
+        = salario bruto * 11/100.</p>
+    <hr>
+    <img src="https://integra.ifsp.edu.br/img/logo-instituto.51d61d98.png" height="100">
+    <h1>Cálculo de Salário Líquido</h1>
+    <form id="salarioForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br>
+
+        <label for="salarioBruto">Salário Bruto:</label>
+        <input type="number" id="salarioBruto" required><br>
+
+        <input type="submit" value="Calcular Salário Líquido">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById("salarioForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Obter os valores dos campos de entrada
+            var nome = document.getElementById("nome").value;
+            var salarioBruto = parseFloat(document.getElementById("salarioBruto").value);
+
+            // Calcular o INSS, bônus, plano de saúde e salário líquido
+            var inss = salarioBruto * 0.11;
+            var bonus = salarioBruto * 0.10;
+            var planoSaude = salarioBruto * 0.15;
+            var salarioLiquido = salarioBruto + bonus - inss - planoSaude;
+
+            // Exibir o resultado
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "<h2>Resultado do Cálculo</h2>";
+            resultado.innerHTML += "<p><b>Nome:</b> " + nome + "</p>";
+            resultado.innerHTML += "<p><b>INSS:</b> R$ " + inss.toFixed(2) + "</p>";
+            resultado.innerHTML += "<p><b>Bônus:</b> R$ " + bonus.toFixed(2) + "</p>";
+            resultado.innerHTML += "<p><b>Plano de Saúde:</b> R$ " + planoSaude.toFixed(2) + "</p>";
+            resultado.innerHTML += "<p><b>Salário Líquido:</b> R$ " + salarioLiquido.toFixed(2) + "</p>";
+        });
+
+    </script>
+</body>
+
+</html>

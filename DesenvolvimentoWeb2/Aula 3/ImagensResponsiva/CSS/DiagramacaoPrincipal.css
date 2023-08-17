@@ -1,0 +1,84 @@
+
+.header{
+    background-color:#bdb4b4;
+    padding:15px;
+    text-align:center;
+    /*margin-top: 20px;*/
+    
+  }
+
+.footer{
+    background-color:#6e6767;
+    text-align:center;
+    padding:10px;  
+    width: 100%;
+    margin-top: 5px;
+    
+
+    /* Fixa o footer no fundo*/
+    /*position: fixed;
+    bottom: 0;
+    width: 100%;
+    */
+
+    position: relative;
+    bottom: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* CSS para FlexBox */
+
+  .container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /*os itens podem ser dispostos em várias linhas   :  nowrap | wrap-reverse*/ 
+    justify-content: space-between;  /*Alinha os itens de forma horizontal. Eixo y*/
+    align-items: flex-start; /*Alinha os itens de forma vertical. Eixo x*/
+    margin-top: 5px;
+    overflow: hidden;      
+}
+
+.child{
+/*width: 45%;*/
+
+background-color: red;
+border: 1px solid black;
+/*flex: 1 1 24%;*/
+/*overflow: scroll;*/
+/*overflow-y: auto;*/
+/*flex-grow: 1;*/
+}
+
+
+
+
+
+/* Small screens */
+@media (max-width: 768px) {
+   .child {
+      flex: 1 1 98%; /* flex-grow - flex-shrink - flex-basis *//* Display 2 items per row -- 0 permite liberdade para colocar o tamanho -- 1 permite que o tamanho tenha relação com outras child´s*/
+   }
+
+  
+}
+
+/* Larger screens */
+@media (min-width: 769px) {
+   .child {
+      height: 200px;
+      flex: 0 0 24%; /* flex-grow - flex-shrink - flex-basis */
+   }
+
+   .container{    
+      border: 1px solid black;
+     } 
+
+   .footer{
+      position: absolute;
+   }
+}

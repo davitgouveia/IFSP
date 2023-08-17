@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <style>
+        .calculator {
+            width: 280px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .result {
+            margin-bottom: 10px;
+            height: 1em;
+            text-align: right;
+            border: 2px solid black;
+            padding: 1em;
+        }
+
+        .button {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: #e6e6e6;
+            border: 1px solid gray;
+        }
+        body, html{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Davi Trost Gouveia - PC3010741</h2>
+    <div class="calculator">
+        <div class="result" id="result">0</div>
+        <button class="button" onclick="clearResult()">C</button>
+        <button class="button" onclick="deleteLast()">←</button>
+
+        <button class="button" onclick="appendNumber('7')">7</button>
+        <button class="button" onclick="appendNumber('8')">8</button>
+        <button class="button" onclick="appendNumber('9')">9</button>
+
+        <button class="button" onclick="appendOperator('/')">÷</button>
+        <button class="button" onclick="appendOperator('*')">×</button>
+
+        <button class="button" onclick="appendNumber('4')">4</button>
+        <button class="button" onclick="appendNumber('5')">5</button>
+        <button class="button" onclick="appendNumber('6')">6</button>
+
+        <button class="button" onclick="appendNumber('.')">.</button>
+        <button class="button" onclick="appendOperator('-')">-</button>
+
+        <button class="button" onclick="appendNumber('1')">1</button>
+        <button class="button" onclick="appendNumber('2')">2</button>
+        <button class="button" onclick="appendNumber('3')">3</button>
+
+        <button class="button" onclick="calculatePower()">x^2</button>
+        <button class="button" onclick="appendOperator('+')">+</button>
+        <button class="button" onclick="calculateSquareRoot()">√</button>
+        <button class="button" onclick="appendNumber('0')">0</button>
+        <button class="button" style="background-color: aqua;" onclick="calculate()">=</button>
+    </div>
+
+    <script>
+        let expression = '';
+
+        function updateResult() {
+            document.getElementById('result').textContent = expression;
+        }
+
+        function appendNumber(number) {
+            expression += number;
+            updateResult();
+        }
+
+        function appendOperator(operator) {
+            expression += operator;
+            updateResult();
+        }
+
+        function calculate() {
+            try {
+                const result = eval(expression);
+                expression = result.toString();
+                updateResult();
+            } catch (error) {
+                expression = '';
+                updateResult();
+                alert('Error in expression!');
+            }
+        }
+
+        function calculateSquareRoot() {
+            try {
+                const result = Math.sqrt(eval(expression));
+                expression = result.toString();
+                updateResult();
+            } catch (error) {
+                expression = '';
+                updateResult();
+                alert('Error in expression!');
+            }
+        }
+
+        function calculatePower() {
+            try {
+                const result = Math.pow(eval(expression), 2);
+                expression = result.toString();
+                updateResult();
+            } catch (error) {
+                expression = '';
+                updateResult();
+                alert('Error in expression!');
+            }
+        }
+
+        function clearResult() {
+            expression = '';
+            updateResult();
+        }
+
+        function deleteLast() {
+            expression = expression.slice(0, -1);
+            updateResult();
+        }
+    </script>
+</body>
+
+</html>

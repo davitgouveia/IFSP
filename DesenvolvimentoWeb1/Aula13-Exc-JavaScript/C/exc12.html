@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+<input type="button" id="btn01" value="OK">
+</form>
+
+<p>Clique o botão "Desativar" para Desativar o botão "OK":</p>
+
+<!--Aciona a função ao clicar-->
+<button onclick="DesativarElement()">Desativar</button>
+
+<script>
+    //Desativa o elemento
+function DesativarElement() {
+document.getElementById("btn01").disabled = true;
+}
+</script>
+
+</body>
+</html>

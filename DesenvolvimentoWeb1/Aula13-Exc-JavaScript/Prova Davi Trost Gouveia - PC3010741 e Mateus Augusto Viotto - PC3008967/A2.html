@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<!-- Davi Trost Gouveia - PC3010741 -->
+<!-- Mateus Augusto Viotto - PC3008967 -->
+
+<head>
+    <p> Davi Trost Gouveia - PC3010741</p>
+    <p> Mateus Augusto Viotto - PC3008967 </p>
+    <h4>Enunciado:</h4>
+    <p>A2. Fazer um programa para pedir o nome, endereço, peso (inteiro), altura , e calcular o imc, como sendo o peso
+        dividido pelo quadrado da altura; Mostrar estes dados na tela.</p>
+    <hr>
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://integra.ifsp.edu.br/img/logo-instituto.51d61d98.png" height="100">
+    <h1>Calculadora de IMC</h1>
+    <form id="imcForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" required><br>
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" required><br>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" id="altura" required><br>
+
+        <input type="submit" value="Calcular IMC">
+
+        <h2 id="resultadoIMC"></h2>
+    </form>
+
+    <div id="resultado"></div>
+    <script>
+        document.getElementById("imcForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var nome = document.getElementById("nome").value;
+            var endereco = document.getElementById("endereco").value;
+            var peso = parseInt(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+
+            // Calcular o IMC
+            var imc = peso / (altura * altura);
+
+            // Exibir o resultado
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML += "<p><b>Nome:</b> " + nome + "</p>";
+            resultado.innerHTML += "<p><b>Endereço:</b> " + endereco + "</p>";
+            resultado.innerHTML += "<p><b>Peso:</b> " + peso + " kg</p>";
+            resultado.innerHTML += "<p><b>Altura:</b> " + altura + " m</p>";
+            resultado.innerHTML += "<p><b>IMC:</b> " + imc.toFixed(2) + "</p>";
+
+            if (imc < 18.5) {
+                document.getElementById('resultadoIMC').innerHTML = 'Resultado do IMC: Abaixo do peso.'
+            }
+            if (imc >= 18.5 && imc < 25) {
+                document.getElementById('resultadoIMC').innerHTML = 'Resultado do IMC: Peso ideal (Parabéns!)'
+            }
+            if (imc >= 25 && imc < 30) {
+                document.getElementById('resultadoIMC').innerHTML = 'Resultado do IMC: Levemente acima do peso'
+            }
+            if (imc >= 30 && imc < 35) {
+                document.getElementById('resultadoIMC').innerHTML = 'Resultado do IMC: Obesidade grau 1'
+            }
+            if (imc >= 35 && imc <= 40) {
+                document.getElementById('resultadoIMC').innerHTML = 'Resultado do IMC: Obesidade grau 2 (severa)'
+            }
+            if (imc > 40) {
+                document.getElementById('resultadoIMC').innerHTML = 'Resultado do IMC: Obesidade grau 3 (mórbida)'
+            }
+        });
+
+    </script>
+</body>
+
+</html>

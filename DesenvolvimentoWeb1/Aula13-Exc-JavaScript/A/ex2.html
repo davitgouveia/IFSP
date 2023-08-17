@@ -1,0 +1,62 @@
+<!-- teste este exemplo para compreender os problemas que podem acontecer nos exercicios-->
+
+<!DOCTYPE html> <!-- Espaço entre ! e DOCTYPE -->
+    <html lang=pt-br>
+
+    <head>
+        <title> Exercício para teste </title>
+        <script>
+
+        </script>
+    </head>
+
+    <body>
+        <h1>
+            <font color="#FF0000"> Formulário:
+        </h1>
+        <form action="/action_page.php">
+            <font color="#151515">
+                <p> Nome: <input type="text" id="nome" onfocus="myFunction(this.id) " onblur="Function(this.id)"> </p>
+                <br>
+                <p> Endereço: <input type="text" id="endereco" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+                </p>
+                <br>
+                <p> Cidade: <input type="text" id="cidade" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+                </p>
+                <br>
+                <p> Estado: <input type="text" id="estado" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+                </p>
+                <br>
+                <p> Gênero: <input type="text" id="genero" onfocus="myFunction(this.id)" onblur="Function(this.id)">
+                </p>
+                <br>
+                <p> Idade: <input type="text" id="idade" onfocus="myFunction(this.id)" onblur="Function(this.id)"> </p>
+        </form>
+        <script>
+            function myFunction(x) {
+                document.getElementById(x).style.background = "red";
+            }
+
+            function Function(y) {
+                document.getElementById(y).style.background = "white";
+                var x = document.getElementById("nome");
+                x.value = x.value.toUpperCase();
+                var x = document.getElementById("endereco");
+                x.value = x.value.toUpperCase();
+                var x = document.getElementById("cidade");
+                x.value = x.value.toUpperCase();
+                var x = document.getElementById("estado");
+                x.value = x.value.toUpperCase();
+                var x = document.getElementById("genero");
+                x.value = x.value.toUpperCase();
+                var x = document.getElementById("idade");
+                x.value = x.value.toUpperCase();
+            }
+
+
+        </script>
+
+        <p> </p> <!--Paragrafo inutilizado-->
+    </body>
+
+</html>

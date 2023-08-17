@@ -1,0 +1,37 @@
+.responsive {
+    width: 100%;
+    height: auto;
+  }
+
+
+.responsive1{
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+}
+
+
+.responsive2{    
+        width: 100%; /* Make the image width 100% of the container */
+        height: auto; /* Automatically adjust the height while maintaining aspect ratio */
+        display: block; /* Remove any extra spacing around the image */
+   
+
+}
+
+
+  /*Exemplo de prioridade entre classes */
+  /*
+  .child{
+   
+    height: 500px;
+    background-color: rgb(10, 78, 204);
+    border: 1px solid black;
+    overflow-y: auto;   
+    
+    }
+    */
+    
+    

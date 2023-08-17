@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Celsius para Fahrenheit</h2>
+
+<p>Insira um número em um dos campos de entrada abaixo:</p>
+
+<!--Aciona as funções após as teclas serem pressionadas-->
+<p><input id="c" onkeyup="convert('C')"> graus Celsius</p>
+
+<p><input id="f" onkeyup="convert('F')"> graus Fahrenheit</p>
+
+<p>Observe que o método <b>Math.round()</b> é usado para que o resultado seja retornado como um número inteiro.</p>
+
+<script>
+function convert(degree) {
+var x;
+//Realiza as transformações
+if (degree == "C") {
+x = document.getElementById("c").value * 9 / 5 + 32;
+document.getElementById("f").value = Math.round(x);
+} else {
+x = (document.getElementById("f").value -32) * 5 / 9;
+document.getElementById("c").value = Math.round(x);
+}
+}
+</script>
+
+</body>
+</html>
