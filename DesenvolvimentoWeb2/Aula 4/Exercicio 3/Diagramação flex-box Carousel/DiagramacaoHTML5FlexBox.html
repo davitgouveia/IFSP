@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+ 
+<html>
+ 
+    <head>
+        <title>Exemplo de estrutura de site em HTML5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="Scripts/estilo.css">-->
+        <link rel="stylesheet" href="CSS/FlexBox.css">
+
+ 
+ <!--
+ <style>
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    margin-top: 3px;
+    
+        
+}
+
+.child{
+/*width: 45%;*/
+height: 200px;
+background-color: red;
+border: 1px solid black;
+/*flex: 1 1 24%;*/
+/*overflow: scroll;*/
+overflow-y: auto;
+
+}
+
+
+/* Small screens */
+@media (max-width: 768px) {
+   .child {
+      flex: 1 1 98%; /* Display 2 items per row */
+   }
+}
+
+/* Larger screens */
+@media (min-width: 769px) {
+   .child {
+      height: 100px;
+      flex: 1 1 5%; /* flex-grow - flex-shrink - flex-basis */
+   }
+}
+
+
+
+        </style>
+        -->
+
+        </head>
+
+
+        <body>
+
+
+            <div class="header">  
+                <h1>Hello World</h1>                
+            </div>          
+            
+            <div class="container">
+
+            <div style="order:2;" class="child">conteudo 1 conteudo 1 conteudo 1 conteudo 1conteudo 1conteudo 1conteudo 1 conteudo 1 conteudo 1 conteudo 1 conteudo 1conteudo 1conteudo 1conteudo 1 conteudo 1 conteudo 1 conteudo 1 conteudo 1conteudo 1conteudo 1conteudo 1 conteudo 1 conteudo 1 conteudo 1 conteudo 1conteudo 1conteudo 1conteudo 1 conteudo 1 conteudo 1 conteudo 1 conteudo 1conteudo 1conteudo 1conteudo 1 </div>
+            <div style="order:3;" class="child">conteudo 2</div>
+            <div style="order:4;" class="child">conteudo 3</div>
+            <div style="order:0;" class="child">conteudo 4</div>
+            <!--<div class="child" style="order:5;">conteudo 5</div>-->
+
+            </div>
+
+
+
+            <div class="footer">© Exemplo HTML5 Responsivo</div>
+        </body>
+    </html>
+
