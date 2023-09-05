@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--Davi Trost Gouveia PC3010741-->
+<html>
+
+<head>
+    <title>Exemplo de Diagramação FlexBox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FlexBox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menu">Menu<i class="fa fa-bars"></i>
+        </label>
+        <h1>IFSP</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1688560722687-7d4d5fb8ff8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Slide 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1692369794275-db51d71d1ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1175&q=80"
+                    alt="Slide 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1691415721029-88422e242cfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Slide 3">
+            </div>
+        </div>
+        <button id="prevBtn">
+            <h1><</h1>
+        </button>
+        <button id="nextBtn">
+            <h1>></h1>
+        </button>
+    </div>
+
+
+    <div class="container">
+        <div style="order:0;" class="child">
+            <div class="card">
+                <img src="https://pbs.twimg.com/profile_images/1111938827/picture-IFSP_400x400.jpg" alt="Image 2">
+                <h1>IFSP</h1>
+                <p>Suspendisse mollis tortor et nisi auctor, eu
+                    dapibus justo finibus. Pellentesque ac eros sed tellus bibendum faucibus. Nunc in enim ut augue
+                    vestibulum accumsan. Sed sed hendrerit arcu. Integer non dui gravida, viverra leo vitae, viverra
+                    risus. Donec ut vehicula diam. Sed ultrices ex ac pellentesque sollicitudin.Sed sed hendrerit arcu.
+                    Integer non dui gravida, viverra leo vitae, viverra
+                    risus. Donec ut vehicula diam. Sed ultrices ex ac pellentesque sollicitudin.</p>
+            </div>
+        </div>
+        <div style="order:1;" class="child">
+            <div class="card">
+                <img src="https://pbs.twimg.com/profile_images/1111938827/picture-IFSP_400x400.jpg" alt="Image 2">
+                <h1>IFSP</h1>
+                <p>Suspendisse mollis tortor et nisi auctor, eu
+                    dapibus justo finibus. Pellentesque ac eros sed tellus bibendum faucibus. Nunc in enim ut augue
+                    vestibulum accumsan. Sed sed hendrerit arcu. Integer non dui gravida, viverra leo vitae, viverra
+                    risus. Donec ut vehicula diam. Sed ultrices ex ac pellentesque sollicitudin.Sed sed hendrerit arcu.
+                    Integer non dui gravida, viverra leo vitae, viverra
+                    risus. Donec ut vehicula diam. Sed ultrices ex ac pellentesque sollicitudin.</p>
+            </div>
+        </div>
+        <div style="order:2;" class="child">
+            <div class="card">
+                <img src="https://pbs.twimg.com/profile_images/1111938827/picture-IFSP_400x400.jpg" alt="Image 2">
+                <h1>IFSP</h1>
+                <p>Suspendisse mollis tortor et nisi auctor, eu
+                    dapibus justo finibus. Pellentesque ac eros sed tellus
+                    bibendum faucibus. Nunc in enim ut augue
+                    vestibulum accumsan. Sed sed hendrerit arcu. Integer non dui gravida, viverra leo vitae, viverra
+                    risus. Donec ut vehicula diam. Sed ultrices ex ac pellentesque sollicitudin.Sed sed hendrerit arcu.
+                    Integer non dui gravida, viverra leo vitae, viverra
+                    risus. Donec ut vehicula diam. Sed ultrices ex ac pellentesque sollicitudin.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="child">
+            <img src="https://sampi.net.br/dir-arquivo-imagem/2020/12/7c-instituto-federal-foto-amandavieira-scaled-e1607648355644.jpg"
+                alt="Image 4" id="imgIF">
+        </div>
+        <div class="child">
+            <h1>Conheça o Campus</h1>
+            <p class="col">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris n
+                ec quam non urna fringilla
+                rutrum in
+                ac tellus. Sed eleifend nisl ac leo laoreet auctor. Etiam sit amet ligula
+                id enim tempus ornare id ut nibh. Aliquam erat volutpat. Mauris consequat ac dui pharetra lobortis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris n
+                ec quam non urna fringilla
+                rutrum in
+                ac tellus. Sed eleifend nisl ac leo laoreet auctor. Etiam sit amet ligula
+                id enim tempus ornare id ut nibh. Aliquam erat volutpat. Mauris consequat ac dui pharetra lobortis.</p>
+        </div>
+    </div>
+
+    <div class="footer">© Exemplo HTML5 Responsivo Flex Box - PC3010741</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
