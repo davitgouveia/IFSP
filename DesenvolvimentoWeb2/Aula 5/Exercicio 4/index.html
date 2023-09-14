@@ -7,17 +7,17 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="row" id="navbar-header">
-            <div class="col-6">Curtir</div>
-            <div class="col-2">Mensagens</div>
-            <div class="col-2">
-                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Notificações (16)
-                </button>
+            <div class="col-sm-6">Curtir</div>
+            <div class="col-sm-2">Mensagens</div>
+            <div class="col-sm-2">
+                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><span
+                        style="color:white">Notificações (16)</span></button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-2">
                 <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Barão Natural
+                    <span style="color: white">Barão Natural</span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -35,41 +35,50 @@
                 </ul>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-                width="60" height="60">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <nav class="navbar navbar-expand-lg" id="navbar">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <img src="https://integra.ifsp.edu.br/img/logo-instituto.51d61d98.png" height="100"
+                                style="margin-top: -1px;" />
+                        </li>
                     </ul>
-                  </li>
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+                    <div class="d-flex align-items-center w-100">
+                        <form class="form-inline my-2 my-lg-0 w-100">
+                            <input class="form-control mr-sm-2 " type="search"
+                                placeholder="Busque por cargo, ex: auxiliar de cozinha" aria-label="Search">
+                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span style="color: rgb(0, 0, 0)">Barão Natural</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            <button class="btn btn-outline my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>
+
+                    </div>
+                </div>
             </div>
-          </nav>
+        </nav>
+
     </header>
 
     <div class="container">
-        <div class="row">
-            <div class="col" id="logo-empresa">
+        <div class="row justify-content-center">
+            <div class="col-sm-3 mx-3 my-5 p-0 h-100" id="logo-empresa">
                 <div class="row" id="imagem">
-
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" width="260"
+                        height="260">
                 </div>
-                <div class="row" id="info">
+                <div class="row p-3" id="info">
                     <div class="titulo">
                         <h1>Barão Natural</h1>
                         <p>Vegetariano</p>
@@ -80,6 +89,7 @@
                             vem sendo utilizado desde o século XVI, simplesmente uma simulação da indústria tipográfica
                             e de impressos, e vem quando.</p>
                     </div>
+                    <hr>
                     <div class="horarios">
                         <h3>HORÁRIO DE FUNCIONAMENTO</h3>
                         <p><b>Seg à sex</b> 11h-16h</p>
@@ -87,8 +97,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col" id="conteudo-empresa">
-                <div class="row" id="dados-empresa">
+            <div class="col-sm-6 mx-3 my-5" id="conteudo-empresa">
+                <div class="row p-2" id="dados-empresa">
                     <h3>DADOS DA EMPRESA</h3>
                     <p>Nome</p>
                     <p>E-mail</p>
@@ -97,10 +107,10 @@
                     <p>Endereço</p>
                     <p>Telefone</p>
                 </div>
-                <div class="row" id="cardapio">
-                    <h3>CARDAPIO</h3>
+                <div class="row my-4 p-2" id="cardapio">
+                    <h3>CARDÁPIO</h3>
                     <div class="row" id="cardapio-items">
-                        <div class="col">
+                        <div class="col-6">
                             <p>Item 1</p>
                             <p>Item 2</p>
                             <p>Item 3</p>
@@ -109,7 +119,7 @@
                             <p>Item 6</p>
                             <p>Item 7</p>
                         </div>
-                        <div class="col">
+                        <div class="col-6">
                             <p>Item 1</p>
                             <p>Item 2</p>
                             <p>Item 3</p>
@@ -120,11 +130,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" id="quadro-colaboradores">
-                    <div class="col" id="colaboradores">
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                <div class="row p-1" id="quadro-colaboradores">
+                    <h3>QUADRO DE COLABORADORES</h3>
+                    <div class="col-sm-6 p-3" id="colaboradores">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -134,9 +145,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -146,9 +157,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -158,9 +169,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -171,10 +182,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col" id="colaboradores">
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                    <div class="col-sm-6 p-3" id="colaboradores">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -184,21 +195,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
-                                <div class="col">
+                                <div class="col w-100">
                                     <h4>Garçom</h4>
                                     <p>Adriano Souza</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -208,9 +219,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="colaboradores-item">
-                            <div class="row">
-                                <div class="col">
+                        <div class="colaboradores-item my-2">
+                            <div class="row w-100">
+                                <div class="col-3">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                                         width="60" height="60">
                                 </div>
@@ -222,12 +233,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" id="enviar-mensagem">
+                <div class="row mt-3" id="enviar-mensagem">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Enviar uma mensagem</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-secondary">Enviar</button>
+                    </form>
 
                 </div>
             </div>
         </div>
     </div>
+    <div class="footer"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
